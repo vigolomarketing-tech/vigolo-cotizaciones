@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vigolo Electricidad | Catálogo de Precios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#003366;
+      --accent:#ffcc00;
+      --light:#f5f7fa;
+    }
+    *{box-sizing:border-box;font-family:'Poppins',sans-serif;margin:0;padding:0}
+    body{background:var(--light);color:#222;line-height:1.6}
+    header{background:var(--blue);color:#fff;text-align:center;padding:2rem 1rem}
+    header h1{font-size:2rem}
+    header p{margin-top:.4rem;font-weight:500}
+    main{max-width:1000px;margin:2rem auto;padding:0 1rem}
+    .search-box{text-align:center;margin-bottom:1rem}
+    .search-box input{padding:.6rem;width:100%;max-width:400px;border:1px solid #ccc;border-radius:6px}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+    th,td{padding:.8rem;text-align:left;border-bottom:1px solid #eee}
+    th{background:#003366;color:#fff;font-weight:600}
+    tr:hover{background:#f0f4f9}
+    .actions{text-align:center;margin-top:1.5rem}
+    .btn{display:inline-block;background:var(--accent);color:var(--blue);padding:.8rem 1.2rem;border-radius:6px;font-weight:700;text-decoration:none;margin:.4rem}
+    footer{text-align:center;background:var(--blue);color:#fff;padding:1rem;margin-top:2rem}
+    @media(max-width:700px){table,thead,tbody,th,td,tr{display:block;width:100%}
+      th{display:none}
+      td{padding:.6rem 0;border:none;border-bottom:1px solid #ddd}
+      td::before{content:attr(data-label);font-weight:600;display:block;color:var(--blue)}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Vigolo Electricidad</h1>
+  <p>Catálogo de Precios — Octubre 2025</p>
+</header>
+
+<main>
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Buscar servicio...">
+  </div>
+
+  <table id="priceTable">
+    <thead>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio Base</th>
+        <th>–5 %</th>
+        <th>–10 %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Tablero domiciliario (fijación)</td><td>$38.200</td><td>$36.300</td><td>$34.400</td></tr>
+      <tr><td>Tablero empotrado 1–24 bocas</td><td>$160.700</td><td>$152.700</td><td>$144.600</td></tr>
+      <tr><td>Instalación cámara CCTV</td><td>$69.600</td><td>$66.100</td><td>$62.600</td></tr>
+      <tr><td>Acometida monofásica</td><td>$175.000</td><td>$166.300</td><td>$157.500</td></tr>
+      <tr><td>Colocación tubo LED doble</td><td>$54.500</td><td>$51.800</td><td>$49.100</td></tr>
+      <tr><td>Puesta a tierra (jabalina)</td><td>$82.200</td><td>$78.100</td><td>$74.000</td></tr>
+      <tr><td>Mantenimiento urgente (zona 5 km)</td><td>$54.400</td><td>$51.700</td><td>$48.900</td></tr>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <a class="btn" href="https://wa.me/541123825297?text=Hola%20Lucas,%20quiero%20consultar%20un%20presupuesto" target="_blank">Consultar por WhatsApp</a>
+    <a class="btn" href="mailto:vigoloelectricidad@gmail.com">Enviar Email</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 Vigolo Electricidad — Todos los derechos reservados
+</footer>
+
+<script>
+  const search = document.getElementById('search');
+  const rows = document.querySelectorAll('#priceTable tbody tr');
+  search.addEventListener('input', e=>{
+    const val = e.target.value.toLowerCase();
+    rows.forEach(r=>{
+      r.style.display = r.textContent.toLowerCase().includes(val)?'':'none';
+    });
+  });
+</script>
+
+</body>
+</html>
+
